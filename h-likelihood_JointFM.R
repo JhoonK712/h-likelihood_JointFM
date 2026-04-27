@@ -114,7 +114,7 @@ bi_base_figure <- ggplot(plot_data, aes(x = Time, y = Hazard, color = Group)) +
 	scale_color_manual(values = c("First infection" = "black", "Second infection" = "red")) +
 	scale_x_continuous(breaks = seq(0, max(plot_data$Time), by = 100), expand = c(0, 0)) + 
 	scale_y_continuous(breaks = seq(0, ylim[2], by = 0.5), limits = ylim, expand = c(0, 0)) +
-	labs(x = "Time (day)", y = "Baseline hazard") +
+	labs(x = "Time (days)", y = "Baseline hazard") +
 	theme_classic() +
 	theme(
 		legend.position = c(0.95, 0.95),
@@ -229,7 +229,7 @@ semi_base_figure <- ggplot(plot_data, aes(x = Time, y = Hazard, color = Group)) 
 	scale_color_manual(values = c("Recurrence" = "black", "Death" = "red")) +
 	scale_x_continuous(breaks = seq(0, max(plot_data$Time), by = 500), expand = c(0, 0)) + 
 	scale_y_continuous(breaks = seq(0, ylim[2], by = 0.0002), limits = ylim, expand = c(0, 0)) +
-	labs(x = "Time (day)", y = "Baseline hazard") +
+	labs(x = "Time (days)", y = "Baseline hazard") +
 	theme_classic() +
 	theme(
 		legend.position = c(0.95, 0.95),
@@ -341,7 +341,7 @@ comp_base_figure <- ggplot(plot_data, aes(x = Time, y = Hazard, color = Group)) 
 	scale_color_manual(values = c("Recurrence" = "black", "Death" = "red")) +
 	scale_x_continuous(breaks = seq(0, max(plot_data$Time), by = 1000), expand = c(0, 0)) + 
 	scale_y_continuous(breaks = seq(0, ylim[2], by = 0.0005), limits = ylim, expand = c(0, 0)) +
-	labs(x = "Time (day)", y = "Baseline hazard") +
+	labs(x = "Time (days)", y = "Baseline hazard") +
 	theme_classic() +
 	theme(
 		legend.position = c(0.95, 0.95),
