@@ -56,14 +56,14 @@ Z <- cbind(age, sex)
 G <- length(unique(dataset$id))
 group <- unique(dataset$id)
 
-#----------------- M-HL -----------------#
+#------------------------------------------- M-HL -------------------------------------------#
 p <- dim(Z)[2]
 init <- c(rep(0, 2), rep(0, 2), rep(0.0, 5), rep(0.0, 5), log(0.2), 1, 1) # beta1, beta2, spline1, spline2, eta, kappa1, kappa2
 
 res11 <- comp_HL_gamma1(formula, EVENT, init, seed=333)
 res11
 
-#----- random effect figure -----#
+#------------------------------------------- random effect figure -------------------------------------------#
 v_h <- res11[[9]]
 SE <- res11[[10]]
 
@@ -90,7 +90,7 @@ bi_random_figure <- ggplot(result, aes(x = x, y = v_h) ) +
 			panel.background = element_blank()
 		)
 
-#----- baseline hazard figure -----#
+#------------------------------------------- baseline hazard figure -------------------------------------------#
 # Estimate
 res_g1 <- res11$Est_g1
 res_g2 <- res11$Est_g2

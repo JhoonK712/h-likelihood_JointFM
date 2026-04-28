@@ -58,13 +58,13 @@ names(temp2)[names(temp2) == "death"] <- "status"
 dataset <- rbind(temp1, temp2)
 dataset$id <- as.numeric(factor(dataset$group, levels = unique(dataset$group)))
 
-#----------------- M-HL -----------------#
+#------------------------------------------- M-HL -------------------------------------------#
 init <- c(rep(0, 1), rep(0, 1), rep(0.0, 5), rep(0.0, 5), log(0.1), 1, 1) # beta1, beta2, spline1, spline2, eta, kappa1, kappa2
 
 res21 <- comp_HL_gamma1(formula, EVENT, init, seed=777)
 res21
 
-#----- random effect figure -----#
+#------------------------------------------- random effect figure -------------------------------------------#
 v_h <- res21[[9]]
 SE <- res21[[10]]
 
@@ -91,7 +91,7 @@ semi_random_figure <- ggplot(result, aes(x = x, y = v_h) ) +
 			panel.background = element_blank()
 		)
 
-#----- baseline hazard figure -----#
+#------------------------------------------- baseline hazard figure -------------------------------------------#
 # Estimate
 res_g1 <- res21$Est_g1
 res_g2 <- res21$Est_g2

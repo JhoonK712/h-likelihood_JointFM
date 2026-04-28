@@ -54,14 +54,14 @@ Z <- as.matrix(X[, c(2:(dim(X)[2]-1))])
 G <- length(unique(dataset$id))
 group <- dataset$id
 
-#----------------- method 1 - M-frailtyHL (suggested) -----------------#
+#------------------------------------------- M-HL -------------------------------------------#
 p <- dim(X)[2]-2
 init <- c(rep(0, 2), rep(0, 2), rep(0.0, 5), rep(0.0, 5), log(0.1), 1, 1) # beta1, beta2, spline1, spline2, eta, kappa1, kappa2
 
 res31 <- comp_HL_gamma1(formula, EVENT, init, seed=335)
 res31
 
-#----- random effect figure -----#
+#------------------------------------------- random effect figure -------------------------------------------#
 v_h <- res31[[9]]
 SE <- res31[[10]]
 
@@ -88,7 +88,7 @@ comp_random_figure <- ggplot(result, aes(x = x, y = v_h) ) +
 			panel.background = element_blank()
 		)
 
-#----- baseline hazard figure -----#
+#------------------------------------------- baseline hazard figure -------------------------------------------#
 # Estimate
 res_g1 <- res31$Est_g1
 res_g2 <- res31$Est_g2
