@@ -8,7 +8,7 @@ Real-world datasets (i.e., kidney data, bladder cancer data, and ovarian cancer 
 
 Detailed information on the R code and its execution can be found below.
 
------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
 
 * Information on the R version and all packages used to produce these results is provided in sessionInfo().txt.
 * The analysis relies on a master code and source files containing functions. Please save and run all R scripts in the same folder.
